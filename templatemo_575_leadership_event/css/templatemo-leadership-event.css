@@ -1,153 +1,142 @@
 /*
-
 TemplateMo 575 Leadership Event
-
 https://templatemo.com/tm-575-leadership-event
-
 */
 
+/* --- RESPONSIVE FOUNDATION --- */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+img, video, iframe, picture, svg {
+  max-width: 100%;
+  height: auto;
+}
+/* --- WAKAS NG RESPONSIVE FOUNDATION --- */
 
 /*---------------------------------------
-  CUSTOM PROPERTIES ( VARIABLES )             
+  CUSTOM PROPERTIES (VARIABLES)
 -----------------------------------------*/
 :root {
-  --white-color:                  #ffffff;
-  --primary-color:                #0dcaf0;
-  --secondary-color:              #0d6efd;
-  --section-bg-color:             #f0f8ff;
-  --dark-color:                   #000000;
-  --navbar-bg-color:              #2e5cb1;
-  --p-color:                      #717275;
-  --highlight-icon-color:         #ff0100;
+  --white-color:            #ffffff;
+  --primary-color:          #0dcaf0;
+  --secondary-color:        #0d6efd;
+  --section-bg-color:       #f0f8ff;
+  --dark-color:             #000000;
+  --navbar-bg-color:        #2e5cb1;
+  --p-color:                #0c1738;
+  --highlight-icon-color:   #ff0100;
 
-  --body-font-family:             'DM Sans', sans-serif;
+  --body-font-family:       'DM Sans', sans-serif;
 
-  --h1-font-size:                 62px;
-  --h2-font-size:                 48px;
-  --h3-font-size:                 36px;
-  --h4-font-size:                 32px;
-  --h5-font-size:                 24px;
-  --h6-font-size:                 22px;
-  --p-font-size:                  18px;
-  --menu-font-size:               16px;
-  --copyright-text-font-size:     16px;
+  --h1-font-size:           62px;
+  --h2-font-size:           48px;
+  --h3-font-size:           36px;
+  --h4-font-size:           32px;
+  --h5-font-size:           24px;
+  --h6-font-size:           22px;
+  --p-font-size:            18px;
+  --menu-font-size:         16px;
+  --copyright-text-font-size: 16px;
 
-  --font-weight-normal:           400;
-  --font-weight-medium:           500;
-  --font-weight-bold:             700;
+  --font-weight-normal:     400;
+  --font-weight-medium:     500;
+  --font-weight-bold:       700;
 }
-
-body {
-    background: var(--white-color);
-    font-family: var(--body-font-family); 
-}
-
 
 /*---------------------------------------
-  TYPOGRAPHY               
+  BASE STYLES
 -----------------------------------------*/
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--dark-color);
+html {
+  background-color: var(--navbar-bg-color);
+}
+body {
+  margin: 0;
+  padding: 0; /* Idinagdag para sa kalinawan */
+  background: var(--white-color) !important;
+  font-family: var(--body-font-family);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/*---------------------------------------
+  TYPOGRAPHY
+-----------------------------------------*/
+h2, h3, h4, h5, h6 {
+  color: var(--dark-color);
+}
+h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-weight-bold);
   letter-spacing: -1px;
 }
-
 h1 {
   font-size: var(--h1-font-size);
   letter-spacing: -2px;
   text-transform: uppercase;
 }
-
 h2 {
   font-size: var(--h2-font-size);
   letter-spacing: -2px;
 }
-
 h3 {
   font-size: var(--h3-font-size);
 }
-
 h4 {
   font-size: var(--h4-font-size);
 }
-
 h5 {
   font-size: var(--h5-font-size);
   line-height: normal;
 }
-
 h6 {
   font-size: var(--h6-font-size);
 }
-
 p {
   color: var(--p-color);
   font-size: var(--p-font-size);
   font-weight: var(--font-weight-normal);
 }
-
 ul li {
   color: var(--p-color);
   font-size: var(--p-font-size);
   font-weight: var(--font-weight-normal);
 }
-
-a, 
-button {
+a, button {
   touch-action: manipulation;
   transition: all 0.3s;
 }
-
 a {
   color: var(--p-color);
   text-decoration: none;
 }
-
 a:hover {
   color: var(--primary-color);
 }
-
 ::selection {
   background: var(--primary-color);
   color: var(--white-color);
 }
-
 ::-moz-selection {
   background: var(--primary-color);
   color: var(--white-color);
 }
 
+/*---------------------------------------
+  HELPERS & UTILITIES
+-----------------------------------------*/
 .section-padding {
   padding-top: 120px;
   padding-bottom: 120px;
 }
-
 .custom-border-radius {
   border-radius: 20px;
 }
-
-b,
-strong {
+b, strong {
   font-weight: var(--font-weight-bold);
 }
-
 .small-title {
   text-transform: uppercase;
 }
-
 .avatar-image {
   border: 2px solid var(--white-color);
   border-radius: 100px;
@@ -155,32 +144,26 @@ strong {
   height: 50px;
   object-fit: cover;
 }
-
 .avatar-image-left {
   position: relative;
   left: -10px;
 }
-
 .avatar-image-left + .avatar-image-left {
   left: -20px;
 }
-
 .avatar-image-left + .avatar-image-left + .avatar-image-left {
   left: -30px;
 }
-
 .avatar-image-left + .avatar-image-left + .avatar-image-left + .avatar-image-left {
   left: -40px;
 }
-
 .avatar-info {
   display: inline-block;
   vertical-align: top;
 }
 
-
 /*---------------------------------------
-  CUSTOM ICON               
+  CUSTOM ICON
 -----------------------------------------*/
 .custom-icon {
   display: inline-block;
@@ -193,7 +176,6 @@ strong {
   font-size: 20px;
   position: relative;
 }
-
 .custom-icon::before,
 .custom-icon::after {
   box-sizing: inherit;
@@ -205,37 +187,31 @@ strong {
   top: 0;
   border-radius: 50%;
 }
-
 .custom-icon::before {
   border: 2px solid transparent;
 }
-
 .custom-icon::after {
   border: 0 solid transparent;
 }
-
 .custom-icon:hover {
   border-color: transparent;
 }
-
 .custom-icon:hover::before {
   border-top-color: var(--primary-color);
   border-right-color: var(--primary-color);
   border-bottom-color: var(--primary-color);
-  transition: border-top-color .15s linear,border-right-color .15s linear .1s,border-bottom-color .15s linear .2s;
+  transition: border-top-color .15s linear, border-right-color .15s linear .1s, border-bottom-color .15s linear .2s;
 }
-
 .custom-icon:hover::after {
   border-top: 2px solid var(--primary-color);
   border-left-width: 2px;
   border-right-width: 2px;
   transform: rotate(270deg);
-  transition: transform .4s linear 0s,border-left-width 0s linear .35s;
+  transition: transform .4s linear 0s, border-left-width 0s linear .35s;
 }
 
-
 /*---------------------------------------
-  CUSTOM BUTTON               
+  CUSTOM BUTTON
 -----------------------------------------*/
 .custom-btn,
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,
@@ -244,30 +220,25 @@ strong {
   border-radius: 100px;
   color: var(--white-color);
   font-size: 15px;
-  font-weight: var(--font-weight-bold); 
+  font-weight: var(--font-weight-bold);
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  
+  padding-left: 12px;
+  padding-right: 12px;
 }
-
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,
 .navbar-nav .nav-link.custom-btn {
   background: var(--secondary-color);
 }
-
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn,
 .navbar-nav .nav-link.custom-btn {
   margin-left: 20px;
 }
-
 .custom-border-btn {
   background: transparent;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
 }
-
 .custom-btn:hover,
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
 .navbar-nav .nav-link.custom-btn:hover {
@@ -276,22 +247,19 @@ strong {
   color: var(--white-color);
 }
 
-
 /*---------------------------------------
-  NAVIGATION              
+  NAVIGATION (Consolidated)
 -----------------------------------------*/
-.sticky-wrapper {
-  background: var(--navbar-bg-color);
-}
-
 .navbar {
-  background: var(--navbar-bg-color);
-  z-index: 9;
-  right: 0;
+  position: fixed;
+  top: 0;
   left: 0;
-  transition: all 0.3s;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--navbar-bg-color);
+  padding: 6px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .navbar-brand {
@@ -301,34 +269,35 @@ strong {
   color: var(--primary-color);
   text-transform: uppercase;
 }
-
+.navbar-brand img {
+  height: 36px;
+  transition: transform 0.2s ease;
+}
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
 .brand-logo {
   font-size: 38px;
 }
-
 .brand-text {
   display: inline-block;
   vertical-align: top;
 }
-
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
-
 .navbar-nav .nav-link {
-  color: #000000;
+  color: #fff; /* Pinalitan mula #000000 base sa "fine-tuning" */
   font-size: var(--menu-font-size);
   font-weight: var(--font-weight-medium);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 10px 0; /* Pinalitan mula 15px base sa "fine-tuning" */
+  transition: color 0.3s;
 }
-
-.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
   color: var(--primary-color);
 }
-
 .navbar-toggler {
   border: 0;
   padding: 0;
@@ -338,32 +307,25 @@ strong {
   height: 35px;
   outline: none;
 }
-
 .navbar-toggler:focus {
   outline: none;
   box-shadow: none;
 }
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: transparent;
 }
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
   transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
-  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
-  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  transition: transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
   top: 0;
 }
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
   transform: rotate(45deg);
 }
-
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
   transform: rotate(-45deg);
 }
-
 .navbar-toggler .navbar-toggler-icon {
   background: var(--white-color);
   transition: background 10ms 300ms ease;
@@ -372,12 +334,10 @@ strong {
   height: 2px;
   position: relative;
 }
-
 .navbar-toggler .navbar-toggler-icon:before,
 .navbar-toggler .navbar-toggler-icon:after {
   transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
-  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
-  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  transition: transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
   position: absolute;
   right: 0;
   left: 0;
@@ -386,78 +346,80 @@ strong {
   height: 2px;
   content: '';
 }
-
-.navbar-toggler .navbar-toggler-icon::before {
+.navbar-toggler .navbar-toggler-icon:before {
   top: -8px;
 }
-
-.navbar-toggler .navbar-toggler-icon::after {
+.navbar-toggler .navbar-toggler-icon:after {
   top: 8px;
 }
 
+/* Mobile Navbar Adjustments (Mula sa fine-tuning) */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: var(--navbar-bg-color);
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
+  }
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+  }
+}
 
 /*---------------------------------------
-  HIGHLIGHT              
+  HIGHLIGHT
 -----------------------------------------*/
 .highlight {
   background: var(--navbar-bg-color);
   padding-bottom: 16px;
 }
-
 .highlight-thumb {
   position: relative;
   overflow: hidden;
   margin-top: 24px;
   margin-bottom: 24px;
 }
-
 .highlight-thumb::after {
   content: "";
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0,0,0,0.45);
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
 }
-
 .highlight-thumb:hover .highlight-title {
-  opacity: 0;
-  visibility: hidden;
+  opacity:0;
+  visibility:hidden;
 }
-
 .highlight-thumb:hover .highlight-icon {
-  opacity: 1;
-  visibility: visible;
+  opacity:1;
+  visibility:visible;
 }
-
 .highlight-thumb:hover .highlight-image {
   transform: scale(1.2);
 }
-
 .highlight-info {
   position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
+  z-index:2;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:100%;
+  text-align:center;
 }
-
 .highlight-image {
-  display: block;
-  width: 100%;
+  display:block;
+  width:100%;
   transition: transform 2s;
 }
-
 .highlight-title {
   color: var(--white-color);
   transition: opacity 1s;
   margin-bottom: 0;
 }
-
 .highlight-icon {
   color: var(--highlight-icon-color);
   font-size: var(--h1-font-size);
@@ -468,136 +430,164 @@ strong {
   z-index: 2;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
 }
-
 .highlight-icon:hover {
   color: var(--white-color);
 }
 
-
 /*---------------------------------------
-  HERO              
+  HERO (Consolidated)
 -----------------------------------------*/
 .hero {
   position: relative;
   height: calc(90vh - 84px);
-}
-
-.hero::after {
-  content: "";
-  display: none;
-  background: rgba(0, 0, 0, 0) linear-gradient(rgba(39, 48, 83, 0.1) 0%, rgb(39, 48, 83) 100%) repeat scroll 0% 0%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin-bottom: -5px;
-}
-
-.hero-text {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-image: url('../images/Patnoncover.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: var(--white-color);
 }
-
-.hero .arrow-icon {
-  position: relative;
-  top: 50px;
-}
-
-.video-wrap {
-  z-index: -100;
-}
-
-.custom-video {
+/* Overlay (mula sa "polish") */
+.hero::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  z-index: 1;
 }
-
+/* Centered Text (mula sa "polish") */
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+.video-wrap {
+  z-index:-100;
+}
+.custom-video {
+  position:absolute;
+  top:0;
+  left:0;
+  object-fit:cover;
+  width:100%;
+  height:100%;
+}
 .date-text,
 .location-text {
-  border: 1px solid var(--white-color);
+  border:1px solid var(--white-color);
   color: var(--white-color);
-  display: inline-block;
-  padding: 10px 20px;
+  display:inline-block;
+  padding:10px 20px;
 }
-
 .date-text {
-  border-right: 0;
+  border-right:0;
 }
 
+/*---------------------------------------
+  SPEAKERS / SERVICES SECTION
+-----------------------------------------*/
+.speakers {
+  background: var(--section-bg-color);
+}
+.speakers-thumb {
+  position: relative;
+  overflow:hidden;
+}
+.speakers-thumb-small {
+  margin-top: 24px;
+}
+.speakers-thumb:hover .speakers-info::before {
+  background: var(--primary-color);
+  width: 100%;
+  padding: 15px;
+}
+.speakers-thumb:hover .speakers-title,
+.speakers-thumb:hover .speakers-text {
+  color: var(--white-color);
+}
+.speakers-info {
+  background: rgba(16, 31, 76, 0.8);
+  box-shadow: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 20px;
+  padding: 10px 15px;
+}
+.speakers-info::before {
+  display: none;
+}
+.speakers-image {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.speakers-thumb:hover .speakers-image {
+  transform: scale(1.05);
+}
+.speakers-text-info {
+  padding: 100px;
+}
+.speakers-title,
+.speakers-text {
+  position: relative;
+}
+.speakers-text {
+  font-size: 12px;
+  text-transform: uppercase;
+}
 
 /*---------------------------------------
-  SPEAKERS              
-
-/*---------------------------------------
-  SCHEDULE              
+  SCHEDULE
 -----------------------------------------*/
 .nav-tabs {
-  border-bottom: 0;
+  border-bottom:0;
 }
-
 .nav-tabs .nav-link,
 .nav-tabs .nav-link span {
-  display: block;
-  text-align: left;
+  display:block;
+  text-align:left;
 }
-
-.nav-tabs .nav-link span {
-  display: block;
-}
-
 .nav-tabs .nav-link small {
-  display: block;
-  font-size: 18px;
+  display:block;
+  font-size:18px;
   font-weight: normal;
   color: var(--p-color);
 }
-
 .nav-tabs .nav-link {
   background: var(--white-color);
   border-radius: 0;
   border: 0;
   border-left: 3px solid var(--section-bg-color);
-  padding: 20px 30px;
-  transition: all 0.3s;
+  padding:20px 30px;
+  transition: all .3s;
   width: 25%;
 }
-
 .nav-tabs .nav-link:first-child {
   border-left-color: transparent;
 }
-
-.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active,
-.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
   border-left-color: var(--primary-color);
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
-
 .nav-tabs .nav-link.active h3,
-.nav-tabs .nav-link:focus h3, 
+.nav-tabs .nav-link:focus h3,
 .nav-tabs .nav-link:hover h3 {
   color: var(--primary-color);
 }
-
 .schedule-image {
   border-radius: 20px;
 }
 
-
 /*---------------------------------------
-  CALL TO ACTION              
+  CALL TO ACTION
 -----------------------------------------*/
 .call-to-action {
   background-image: url('../images/terren-hurst-blgOFmPIlr0-unsplash.jpg');
@@ -607,88 +597,77 @@ strong {
   background-attachment: fixed;
   position: relative;
 }
-
 .call-to-action::after {
-  content: "";
-  background: rgba(0, 0, 0, 0.45);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  content:"";
+  background: rgba(0,0,0,0.45);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
 }
-
 .call-to-action .row {
   position: relative;
-  z-index: 2;
+  z-index:2;
 }
-
 .call-to-action .custom-btn {
   background: var(--white-color);
   color: var(--dark-color);
 }
-
 .call-to-action .custom-btn:hover {
   background: var(--primary-color);
   color: var(--white-color);
 }
 
-
 /*---------------------------------------
-  PRICING              
+  PRICING
 -----------------------------------------*/
 .pricing-thumb {
   border-radius: 20px;
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
 }
-
 .pricing-title-wrap,
 .pricing-body {
-  padding: 40px;
+  padding:40px;
 }
-
 .pricing-title-wrap {
   background: var(--navbar-bg-color);
-  padding: 20px 40px;
+  padding:20px 40px;
 }
-
 .pricing-title {
   color: var(--white-color);
 }
 
-
 /*---------------------------------------
-  VENUE               
+  VENUE
 -----------------------------------------*/
 .venue {
   background: var(--section-bg-color);
 }
-
 .venue-thumb {
   border-radius: 20px;
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
 }
-
 .venue-info-title,
 .venue-info-body {
-  padding: 40px;
+  padding:40px;
 }
-
 .venue-info-title {
   background: var(--navbar-bg-color);
-  padding: 20px 40px;
+  padding:20px 40px;
 }
-
 .google-map {
-  border-radius: 20px;
+  width: 100%;      /* Gamitin ang 100% ng lapad ng column */
+  height: auto;     /* Hayaan ang aspect-ratio na magdesisyon */
+  aspect-ratio: 1 / 1; /* Ito ang magic: 1 width = 1 height */
+  border-radius: 20px; /* Panatilihin ang rounded corners */
 }
-
 
 /*---------------------------------------
-  CONTACT              
+  CONTACT
 -----------------------------------------*/
 .contact {
   background-image: url('../images/maria-stewart-p4tj0g-_aMM-unsplash.jpg');
@@ -697,276 +676,137 @@ strong {
   background-size: cover;
   background-attachment: fixed;
 }
-
 .contact-form {
   position: relative;
-  overflow: hidden;
-  border-radius: 20px;
+  overflow:hidden;
+  border-radius:20px;
 }
-
 .contact-form h2 {
   background: var(--navbar-bg-color);
   color: var(--white-color);
-  padding: 30px 50px;
+  padding:30px 50px;
 }
-
-.contact-form .row {
-  padding: 50px;
+.custom-form .row {
+  padding:50px;
 }
-
 .arrow-icon {
   background: var(--section-bg-color);
-  border-radius: 100px;
+  border-radius:100px;
   color: var(--dark-color);
   font-size: var(--h5-font-size);
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  display: inline-block;
-  margin: auto;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  display:inline-block;
+  margin:auto;
 }
-
 .arrow-icon:hover {
   background: var(--primary-color);
   color: var(--white-color);
 }
-
-
-/*---------------------------------------
-  CUSTOM FORM               
------------------------------------------*/
 .custom-form .form-control {
   background: var(--section-bg-color);
-  border: 0;
-  margin-bottom: 24px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  border:0;
+  margin-bottom:24px;
+  padding-top:13px;
+  padding-bottom:13px;
 }
-
 .custom-form button[type="submit"] {
   background: var(--primary-color);
-  border-radius: 100px;
+  border-radius:100px;
   color: var(--white-color);
   font-weight: var(--font-weight-bold);
-  transition: all 0.3s;
-  margin-bottom: 0;
+  transition: all .3s;
+  margin-bottom:0;
 }
-
 .custom-form button[type="submit"]:hover,
 .custom-form button[type="submit"]:focus {
   background: var(--navbar-bg-color);
 }
 
-
 /*---------------------------------------
-  SITE FOOTER              
+  SITE FOOTER
 -----------------------------------------*/
 .site-footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top:100px;
+  padding-bottom:100px;
+  /* Mula sa "polish" */
+  background-color: var(--navbar-bg-color);
+  color: var(--white-color);
+  text-align: center;
 }
-
 .site-footer .navbar-brand {
   color: var(--primary-color);
 }
-
 .site-footer .social-icon-link {
   font-size: var(--h6-font-size);
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  /* Mula sa "polish" */
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: background-color 0.3s, border-color 0.3s;
 }
-
+.site-footer .social-icon-link:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
 .site-footer .copyright-text {
   font-size: var(--copyright-text-font-size);
 }
-
 .footer-menu {
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0;
 }
-
 .footer-menu-item {
-  list-style: none;
+  list-style:none;
 }
-
 .footer-menu-link {
   font-size: var(--copyright-text-font-size);
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
+  display:inline-block;
+  vertical-align:top;
+  margin-right:20px;
 }
-
-
-/*---------------------------------------
-  SOCIAL ICON               
------------------------------------------*/
 .social-icon {
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0;
 }
-
 .social-icon li {
-  list-style: none;
-  display: inline-block;
-  vertical-align: top;
+  list-style:none;
+  display:inline-block;
+  vertical-align:top;
 }
-
 .social-icon-link {
   background: var(--white-color);
-  border-radius: 100px;
+  border-radius:100px;
   font-size: var(--p-font-size);
   color: var(--dark-color);
-  display: inline-block;
-  vertical-align: top;
-  margin: 2px;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
+  display:inline-block;
+  vertical-align:top;
+  margin:2px;
+  width:30px;
+  height:30px;
+  line-height:30px;
+  text-align:center;
 }
-
 .social-icon-link:hover {
   background: var(--primary-color);
   color: var(--white-color);
 }
 
-
 /*---------------------------------------
-  RESPONSIVE STYLES               
+  MGA CUSTOM CODE (Inayos at Pinagsama)
 -----------------------------------------*/
-@media screen and (max-width: 1500px) {
-   .speakers-text-info {
-    padding: 50px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  h1 {
-    font-size: 48px;
-  }
-
-  h2 {
-    font-size: 36px;
-  }
-
-  h3 {
-    font-size: 32px;
-  }
-
-  h4 {
-    font-size: 28px;
-  }
-
-  h5 {
-    font-size: 20px;
-  }
-
-  h6 {
-    font-size: 18px;
-  }
-
-  .section-padding,
-  .site-footer {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  .custom-btn {
-    font-size: var(--copyright-text-font-size);
-    padding: 8px 16px;
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-left: 0;
-  }
-
-  .navbar-nav .nav-link {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .hero {
-    height: calc(75vh - 78.39px);
-  }
-
-  .nav-tabs .nav-link {
-    width: 50%;
-  }
-
-  .copyright-text-wrap {
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 38px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  h3 {
-    font-size: 28px;
-  }
-
-  h4 {
-    font-size: 24px;
-  }
-
-  h5 {
-    font-size: 20px;
-  }
-
-  .navbar-brand {
-    font-size: 16px;
-  }
-
-  .custom-btn {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-
-  .nav-tabs .nav-link {
-    margin-right: 0;
-    margin-left: 0;
-    padding: 15px;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  .site-footer .social-icon-link {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-  }
-
-  .footer-menu-link {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .footer-menu,
-  .copyright-text-wrap {
-    justify-content: center;
-  }
-}
-
 /* Custom code para sa navbar button alignment */
 .navbar-nav {
   align-items: baseline;
 }
-
 /* Custom code para tanggalin ang overlay sa specific thumb */
 .highlight-thumb.no-overlay::after {
   background: none;
 }
-
 /* Service cards styling */
 .service-card {
   min-height: 300px;
@@ -980,7 +820,6 @@ strong {
 .service-card:hover {
   transform: translateY(-5px);
 }
-
 .service-btn {
   margin-top: 10px;
   padding: 0.5rem 1rem;
@@ -990,32 +829,138 @@ strong {
   border-radius: 4px;
   text-decoration: none;
 }
-
 /* Featured service special styling */
 .featured-service {
   min-height: 400px;
   padding: 30px;
 }
 .featured-service img.speakers-image {
-  max-width: 70%;
+  max-width: 90%;
   width: auto;
   margin: 0 auto;
 }
-
 /* Small service cards image size tweak */
 .speakers-thumb-small img.speakers-image {
-  max-width: 115%;
+  max-width: 90%;
   width: auto;
   margin: 0 auto 15px;
 }
-
 /* Text info spacing & readability */
 .speakers-text-info p {
   font-size: 1.1rem;
   line-height: 1.5;
 }
-
 /* Spacing between rows of cards */
 .row.gy-4 > [class*="col-"] {
   margin-bottom: 20px;
+}
+
+/* === Section & Scroll-Margin Fix === */
+section {
+  scroll-margin-top: 80px; /* Tiyak na taas para sa fixed navbar */
+  transition: background 0.3s ease-in-out;
+}
+
+/*---------------------------------------
+  MOBILE FIXES
+-----------------------------------------*/
+@media screen and (max-width: 1500px) {
+  .speakers-text-info {
+    padding: 50px;
+  }
+}
+@media screen and (max-width: 991px) {
+  h1 { font-size: 48px; }
+  h2 { font-size: 36px; }
+  h3 { font-size: 32px; }
+  h4 { font-size: 28px; }
+  h5 { font-size: 20px; }
+  h6 { font-size: 18px; }
+  .section-padding, .site-footer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .custom-btn {
+    font-size: var(--copyright-text-font-size);
+    padding: 8px 16px;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0;
+  }
+  /* .navbar-nav .nav-link is handled by the "fine-tuning" media query */
+  .hero {
+    height: calc(75vh - 78.39px);
+  }
+  .nav-tabs .nav-link {
+    width: 50%;
+  }
+  .copyright-text-wrap {
+    margin-top: 20px;
+  }
+  /*
+  Ilipat ang hero button sa upper-right
+  kapag mobile view (max-width: 991px)
+*/
+
+/* 1. Tiyakin na ang .hero section ang "magulang"
+     ng ating absolute button
+*/
+.hero {
+  position: relative;
+}
+
+/* 2. Hayaan nating 'wag gumalaw ang .hero-text container
+     para hindi ito makagulo
+*/
+.hero .hero-text {
+  position: static;
+}
+
+/* 3. Ito na ang mismong paglipat sa button
+*/
+.hero .hero-text .custom-btn {
+  position: absolute; /* Hihilahin natin siya palabas sa flow */
+  top: 20px;  /* 20px mula sa taas (para may espasyo sa navbar) */
+  right: 20px; /* 20px mula sa kanan */
+  z-index: 10; /* Para siguradong nasa ibabaw ng dark overlay */
+
+  /* Tanggalin ang dating margin na nilagay natin */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+}
+@media screen and (max-width:480px) {
+  h1 { font-size: 38px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 28px; }
+  h4 { font-size: 24px; }
+  h5 { font-size: 20px; }
+  .navbar-brand { font-size: 16px; }
+  .custom-btn { font-size: 13px; padding: 6px 12px; }
+  .hero-text { width:100%; }
+  .site-footer .social-icon-link {
+    width:35px; height:35px; line-height:35px;
+  }
+  .footer-menu-link {
+    margin-left:10px; margin-right:10px;
+  }
+  .footer-menu, .copyright-text-wrap {
+    justify-content: center;
+  }
+  .hero {
+    background-image: url('../images/mobilecover.png');
+    background-position: center center;
+    background-size: cover;
+  }
+  .contact-form .row { padding: 30px 20px; }
+  .contact-form h2 { padding: 30px 20px; }
+  .venue-info-title, .venue-info-body { padding:30px 20px; }
+  .pricing-title-wrap, .pricing-body { padding:30px 20px; }
+  .speakers-text-info { padding:30px 20px; }
+  .nav-tabs .nav-link { width:100%; margin-bottom:10px; }
+  .speakers-info {
+    padding:15px;
+    margin:10px;
+  }
+  /* Inalis ang mga !important rules para sa sticky/margin dahil sa fixed nav */
 }
