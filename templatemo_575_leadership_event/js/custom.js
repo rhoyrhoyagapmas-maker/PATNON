@@ -56,10 +56,10 @@ contactForm.addEventListener('submit', async (event) => {
 
     // Kunin ang data mula sa mga input fields
     // (Siguraduhin na ang HTML mo ay may mga 'id' na ito)
-    const name = document.getElementById('form-name').value;
-    const email = document.getElementById('form-email').value;
-    const subject = document.getElementById('form-subject').value;
-    const message = document.getElementById('form-message').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
 
     // --- ANG PAG-INSERT SA DATABASE ---
     const { data, error } = await supabase
