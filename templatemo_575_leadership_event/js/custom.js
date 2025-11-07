@@ -37,7 +37,10 @@
 const SUPABASE_URL = 'https://ghvdkcakzoygktaiynae.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdodmRrY2Frem95Z2t0YWl5bmFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MjE4MTEsImV4cCI6MjA3ODA5NzgxMX0.9q3ak7TDEGApTsmrG8KGrMFhceg0qKL-KJD3Hthp0Mg';
 
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+// --- PART 1: ANG KONEKSYON ---
+const { createClient } = supabase;
+const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
 
 // Kinukuha natin ang mga elemento sa HTML gamit ang 'id'
 const contactForm = document.getElementById('contact-form');
@@ -45,9 +48,9 @@ const submitButton = document.getElementById('submit-button');
 
 // Kinukumpirma natin na may contact form bago mag-add ng listener
 if (contactForm) {
-    contactForm.addEventListener('submit', async (event) => {
-        
-        event.preventDefault(); // <--- ITO ANG MAGPI-PIGIL SA 404
+   contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  console.log("Form submission intercepted!");
 
         submitButton.disabled = true;
         submitButton.innerText = 'Nagpapadala...';
@@ -59,16 +62,16 @@ if (contactForm) {
         const message = document.getElementById('message').value;
 
         // --- ANG PAG-INSERT SA DATABASE ---
-        const { data, error } = await supabase
-            .from('messagedb') // Tiyakin na ito ang tamang table name!
-            .insert([
-                { 
-                    name: name, 
-                    email: email, 
-                    subject: subject, 
-                    message: message 
-                }
-            ]);
+        const { data, error } = await db
+  .from('messagedb')
+  .insert([
+    { 
+      name: name, 
+      email: email, 
+      subject: subject, 
+      message: message 
+    }
+  ]);
 
         // --- FEEDBACK ---
         if (error) {
