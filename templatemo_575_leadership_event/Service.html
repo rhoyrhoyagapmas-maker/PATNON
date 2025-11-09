@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Patnon Shoe Care - Professional shoe cleaning and restoration services.">
+  <meta name="author" content="Patnon Shoe Care">
 
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>Patnon Shoe Care - Professional Restoration Services</title>
 
-  <title>Patnon Shoe Care – Services</title>
-
-  <!-- CSS FILES -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,15 +17,234 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-icons.css" rel="stylesheet">
   <link href="css/templatemo-leadership-event.css" rel="stylesheet">
+  
+  <meta name="theme-color" content="#2e5cb1">
+
+  <style>
+    /* === Global Polish === */
+    body {
+      /* Mas pino ang rendering ng font */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* === Navbar === */
+    .navbar {
+      /* Nagdaragdag ng subtle shadow para "lumutang" ang nav galing sa content */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand span {
+      /* Tinitiyak na mas bold at kitang-kita ang brand name */
+      font-weight: 700 !important;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      /* Ginagawang brand color ang hover, hindi lang default blue */
+      color: var(--primary-color) !important; 
+    }
+
+
+    /* === Services Section (#section_3) === */
+    .service-card {
+      /* Tinitiyak na walang border na nakakasira sa shadow */
+      border: none !important; 
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      /* "Lift" effect kapag naka-hover */
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .speakers-thumb-small .speakers-image {
+      /* Tinitiyak na ang image ay may rounded corners sa taas */
+      border-top-left-radius: 0.375rem; /* Bootstrap's 'rounded' value */
+      border-top-right-radius: 0.375rem;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover; /* Tinitiyak na 'yung image ay sakop ang space */
+    }
+
+    .service-card .speakers-info {
+      padding: 1.5rem; /* Mas maluwag na padding sa loob ng card */
+    }
+
+    .service-btn {
+      /* Mas malinis na itsura ng button */
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 50px; /* Pill-shaped button */
+      transition: all 0.3s ease;
+    }
+
+    .service-btn:hover,
+    .service-btn[aria-expanded="true"] {
+      /* Nagfi-fill ng kulay kapag na-hover o active */
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* === Pricing Section (#section_4) === */
+    .pricing-thumb {
+      /* Mas pino at consistent na border-radius */
+      border-radius: 12px;
+      overflow: hidden; /* Kinukulong ang content sa loob ng rounded corners */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #eee; /* Subtle border */
+    }
+
+    .pricing-thumb:hover {
+      /* "Lift" effect din dito */
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-title-wrap {
+      /* Mas magandang padding para sa title ng presyo */
+      padding: 1.5rem;
+    }
+
+    .pricing-body {
+      padding: 1.5rem; /* Consistent padding */
+    }
+
+    .pricing-body p {
+      min-height: 70px; /* Tinitiyak na pantay-pantay ang taas ng description */
+      color: #555;
+    }
+
+    /* Ang pinaka-importanteng button (Book Now) */
+    .custom-btn.book-btn {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      font-weight: 700; /* Mas bold */
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46, 92, 177, 0.2); /* Shadow na may kulay ng brand */
+    }
+
+    .custom-btn.book-btn:hover {
+      background-color: #254a8c; /* Medyo darker shade ng primary color */
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(46, 92, 177, 0.3);
+    }
+
+    /* === Booking Modal === */
+    .modal-content {
+      border-radius: 12px;
+      border: none;
+      overflow: hidden; /* Para 'yung header ay sumunod sa rounded corner */
+    }
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-title {
+      font-weight: 700;
+    }
+
+    .modal-body .form-control {
+      /* Mas modern na input fields */
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ced4da;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .modal-body .form-control:focus {
+      /* Mas kitang-kita na focus state gamit ang brand color */
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.25rem rgba(46, 92, 177, 0.25);
+      outline: none;
+    }
+
+    /* Ginagamit 'yung style ng "Book Now" button para sa "Confirm" */
+    #booking-submit-btn {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    #booking-submit-btn:hover {
+      background-color: #254a8c;
+    }
+
+
+    /* === Footer === */
+    .site-footer {
+      /* Mas malinis na background color para sa footer */
+      background-color: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .social-icon-link {
+      /* Ginagawang bilog at mas pino ang social icons */
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #e9ecef;
+      color: #555;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon-link:hover {
+      /* Brand color on hover */
+      background-color: var(--primary-color);
+      color: #ffffff;
+      transform: translateY(-3px); /* "Lift" effect */
+    }
+/* === Ayusin ang taas ng "Our Services" section === */
+/*
+=============================================
+  AYUSIN ANG "BUNGAD" PARA KITANG-KITA AGAD
+=============================================
+*/
+
+/* 1. Bawasan ang padding ng BUONG 'Our Services' section */
+#section_3.section-padding {
+  /* Dati: 100px o higit pa. Ngayon: Mas maliit para umakyat. */
+  padding-top: 50px; 
+  padding-bottom: 50px; /* Binabaan na rin natin para siksik */
+}
+
+/* 2. Bawasan ang padding ng 'Our Services' TEXT block */
+.speakers-text-info {
+  /* Dati: 100px. Ngayon: Mas sakto. */
+  padding: 0px 0; /* 30px sa taas/baba, 0 sa gilid */
+}
+  </style>
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -34,151 +253,292 @@
         <span style="margin-left: 8px; font-size: 1.25rem; font-weight: bold;">Patnon Shoe Care</span>
       </a>
 
-      <a class="nav-link custom-btn btn d-lg-none" href="#">Buy Tickets</a>
+      
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link click-scroll" href="index.html">Home</a>
           </li>
-          <!-- dito pwede mong idagdag yung Services link, etc -->
-          <li class="nav-item">
-            <a class="nav-link custom-btn btn d-none d-lg-block" href="#">Buy Tickets</a>
-          </li>
-        </ul>
+          
+          </ul>
       </div>
+
     </div>
   </nav>
 
-<main>
+  <main>
     <section class="speakers section-padding" id="section_3">
       <div class="container">
+        
         <div class="row">
-          <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center text-center">
+          <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center text-center mx-auto">
             <div class="speakers-text-info">
               <h2 class="mb-4">Our <u class="text-info">Services</u></h2>
-              <p>We deliver top-quality care for your shoes — from deep cleaning to repair and more.</p>
-            </div>
-          </div>
-          <div class="col-lg-12 col-12">
-            <div class="row gy-4">
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center">
-                  <img src="images/Im8.jpg" class="img-fluid d-block mx-auto speakers-image" alt="">
-                  
-                  <div class="speakers-info">
-                    <h5 class="speakers-title mb-0">Deep Clean</h5>
-
-                    <div class="collapse" id="serviceDetails1">
-                      <p class="speakers-text mb-0 mt-2">
-                        Restore your shoes to like-new condition.
-                      </p>
-                    </div>
-                    
-                    <a class="btn service-btn mt-2"
-                       data-bs-toggle="collapse" 
-                       href="#serviceDetails1" 
-                       role="button" 
-                       aria-expanded="false" 
-                       aria-controls="serviceDetails1">
-                       Learn More
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center">
-                  <img src="images/Im5.png" class="img-fluid d-block mx-auto speakers-image" alt="">
-                  
-                  <div class="speakers-info">
-                    <h5 class="speakers-title mb-0">Shoe Repair</h5>
-
-                    <div class="collapse" id="serviceDetails2">
-                      <p class="speakers-text mb-0 mt-2">
-                        Fixing soles, stitching & more for your favourite shoes.
-                      </p>
-                    </div>
-                    
-                    <a class="btn service-btn mt-2"
-                       data-bs-toggle="collapse" 
-                       href="#serviceDetails2" 
-                       role="button" 
-                       aria-expanded="false" 
-                       aria-controls="serviceDetails2">
-                       Learn More
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center">
-                  <img src="images/Im9.png" class="img-fluid d-block mx-auto speakers-image" alt="">
-                  
-                  <div class="speakers-info">
-                    <h5 class="speakers-title mb-0">Restoration</h5>
-
-                    <div class="collapse" id="serviceDetails3">
-                      <p class="speakers-text mb-0 mt-2">
-                        Sole Replacement • Deep Cleaning • Grooming • Full Reglue Service • Partial Repaint • Partial Leather Replacement
-                      </p>
-                    </div>
-                    
-                    <a class="btn service-btn mt-2"
-                       data-bs-toggle="collapse" 
-                       href="#serviceDetails3" 
-                       role="button" 
-                       aria-expanded="false" 
-                       aria-controls="serviceDetails3">
-                       Learn More
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center">
-                  <img src="images/Im6.png" class="img-fluid d-block mx-auto speakers-image" alt="">
-                  
-                  <div class="speakers-info">
-                    <h5 class="speakers-title mb-0">Helmet Cleaning</h5>
-
-                    <div class="collapse" id="serviceDetails4">
-                      <p class="speakers-text mb-0 mt-2">
-                        Clean your helmet.
-                      </p>
-                    </div>
-                    
-                    <a class="btn service-btn mt-2"
-                       data-bs-toggle="collapse" 
-                       href="#serviceDetails4" 
-                       role="button" 
-                       aria-expanded="false" 
-                       aria-controls="serviceDetails4">
-                       Learn More
-                    </a>
-                  </div>
-                </div>
-              </div>
-
+              <p></p>
             </div>
           </div>
         </div>
+        <div class="row gy-4 mt-4 justify-content-center">
+
+          <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
+            <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center h-100 bg-white shadow-sm rounded">
+              <img src="images/Im8.jpg" class="img-fluid d-block mx-auto speakers-image" alt="">
+              
+              <div class="speakers-info">
+                <h5 class="speakers-title mb-0">Deep Clean</h5>
+
+                <div class="collapse" id="serviceDetails1">
+                  <p class="speakers-text mb-0 mt-2">
+                    Restore your shoes to like-new condition.
+                  </p>
+                </div>
+                
+                <a class="btn service-btn mt-2"
+                  data-bs-toggle="collapse" 
+                  href="#serviceDetails1" 
+                  role="button" 
+                  aria-expanded="false" 
+                  aria-controls="serviceDetails1">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
+            <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center h-100 bg-white shadow-sm rounded">
+              <img src="images/Im5.png" class="img-fluid d-block mx-auto speakers-image" alt="">
+              
+              <div class="speakers-info">
+                <h5 class="speakers-title mb-0">Shoe Repair</h5>
+
+                <div class="collapse" id="serviceDetails2">
+                  <p class="speakers-text mb-0 mt-2">
+                    Fixing soles, stitching & more for your favourite shoes.
+                  </p>
+                </div>
+                
+                <a class="btn service-btn mt-2"
+                  data-bs-toggle="collapse" 
+                  href="#serviceDetails2" 
+                  role="button" 
+                  aria-expanded="false" 
+                  aria-controls="serviceDetails2">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
+            <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center h-100 bg-white shadow-sm rounded">
+              <img src="images/Im9.png" class="img-fluid d-block mx-auto speakers-image" alt="">
+              
+              <div class="speakers-info">
+                <h5 class="speakers-title mb-0">Restoration</h5>
+
+                <div class="collapse" id="serviceDetails3">
+                  <p class="speakers-text mb-0 mt-2">
+                    Sole Replacement • Deep Cleaning • Grooming • Full Reglue Service • Partial Repaint • Partial Leather Replacement
+                  </p>
+                </div>
+                
+                <a class="btn service-btn mt-2"
+                  data-bs-toggle="collapse" 
+                  href="#serviceDetails3" 
+                  role="button" 
+                  aria-expanded="false" 
+                  aria-controls="serviceDetails3">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
+            <div class="speakers-thumb speakers-thumb-small service-card text-center d-flex align-items-center justify-content-center h-100 bg-white shadow-sm rounded">
+              <img src="images/Im6.png" class="img-fluid d-block mx-auto speakers-image" alt="">
+              
+              <div class="speakers-info">
+                <h5 class="speakers-title mb-0">Helmet Cleaning</h5>
+
+                <div class="collapse" id="serviceDetails4">
+                  <p class="speakers-text mb-0 mt-2">
+                    Clean your helmet.
+                  </p>
+                </div>
+                
+                <a class="btn service-btn mt-2"
+                  data-bs-toggle="collapse" 
+                  href="#serviceDetails4" 
+                  role="button" 
+                  aria-expanded="false" 
+                  aria-controls="serviceDetails4">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
-</main>
+
+
+
+    <section class="pricing section-padding" id="section_4">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-10 col-12 text-center mx-auto mb-5">
+                <h2>Our <u class="text-info">Services and Prices</u></h2>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="pricing-thumb bg-white shadow-lg">
+                    <div class="pricing-title-wrap d-flex align-items-center">
+                        <h4 class="pricing-title text-white mb-0">Deep Cleaning</h4>
+                        <h5 class="pricing-small-title text-white mb-0 ms-auto">₱350</h5>
+                    </div>
+                    <div class="pricing-body">
+                        <p class="mb-0">Deep cleaning for canvas, leather, and mesh. Removes dirt and stains for that "fresh-out-of-the-box" look.</p>
+                        <div class="border-bottom pb-3 mb-4"></div>
+                        <a class="custom-btn btn mt-3 book-btn" href="#" 
+                           data-bs-toggle="modal" data-bs-target="#bookingModal"
+                           data-service="Deep Cleaning" data-price="350">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="pricing-thumb bg-white shadow-lg">
+                    <div class="pricing-title-wrap d-flex align-items-center">
+                        <h4 class="pricing-title text-white mb-0">Shoe Unyellowing</h4>
+                        <h5 class="pricing-small-title text-white mb-0 ms-auto">₱450</h5>
+                    </div>
+                    <div class="pricing-body">
+                        <p class="mb-0">Removes yellowing from soles and restores the original white color using our special solution.</p>
+                        <div class="border-bottom pb-3 mb-4"></div>
+                        <a class="custom-btn btn mt-3 book-btn" href="#" 
+                           data-bs-toggle="modal" data-bs-target="#bookingModal"
+                           data-service="Shoe Unyellowing" data-price="450">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="pricing-thumb bg-white shadow-lg">
+                    <div class="pricing-title-wrap d-flex align-items-center">
+                        <h4 class="pricing-title text-white mb-0">Full Reglue</h4>
+                        <h5 class="pricing-small-title text-white mb-0 ms-auto">₱1500</h5>
+                    </div>
+                    <div class="pricing-body">
+                        <p class="mb-0">Durable re-adhesion for separated soles. We ensure it lasts and won't let you down.</p>
+                        <div class="border-bottom pb-3 mb-4"></div>
+                        <a class="custom-btn btn mt-3 book-btn" href="#" 
+                           data-bs-toggle="modal" data-bs-target="#bookingModal"
+                           data-service="Full Reglue" data-price="1500">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="pricing-thumb bg-white shadow-lg">
+                    <div class="pricing-title-wrap d-flex align-items-center">
+                        <h4 class="pricing-title text-white mb-0">Shoe Repainting</h4>
+                        <h5 class="pricing-small-title text-white mb-0 ms-auto">₱800</h5>
+                    </div>
+                    <div class="pricing-body">
+                        <p class="mb-0">Restores the original color or provides a full repaint. Uses high-quality paint to prevent chipping.</p>
+                        <div class="border-bottom pb-3 mb-4"></div>
+                        <a class="custom-btn btn mt-3 book-btn" href="#" 
+                           data-bs-toggle="modal" data-bs-target="#bookingModal"
+                           data-service="Shoe Repainting" data-price="800">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="pricing-thumb bg-white shadow-lg">
+                    <div class="pricing-title-wrap d-flex align-items-center">
+                        <h4 class="pricing-title text-white mb-0">Full Restoration</h4>
+                        <h5 class="pricing-small-title text-white mb-0 ms-auto">₱2000</h5>
+                    </div>
+                    <div class="pricing-body">
+                        <p class="mb-0">The complete package! Includes deep cleaning, unyellowing, reglue, and minor repairs to make your shoes look new again.</p>
+                        <div class="border-bottom pb-3 mb-4"></div>
+                        <a class="custom-btn btn mt-3 book-btn" href="#" 
+                           data-bs-toggle="modal" data-bs-target="#bookingModal"
+                           data-service="Full Restoration" data-price="2000">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="pricing-thumb bg-white shadow-lg">
+                    <div class="pricing-title-wrap d-flex align-items-center">
+                        <h4 class="pricing-title text-white mb-0">Helmet Cleaning</h4>
+                        <h5 class="pricing-small-title text-white mb-0 ms-auto">₱200-300</h5>
+                    </div>
+                    <div class="pricing-body">
+                        <p class="mb-0">Deep cleaning and sanitation for the interior and exterior of your helmet. Looks new, smells fresh, and most importantly, is safe to use.</p>
+                        <div class="border-bottom pb-3 mb-4"></div>
+                        <a class="custom-btn btn mt-3 book-btn" href="#" 
+                           data-bs-toggle="modal" data-bs-target="#bookingModal"
+                           data-service="Helmet Cleaning" data-price="200-300">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--navbar-bg-color);">
+                    <h5 class="modal-title text-white" id="bookingModalLabel">Book: <span id="modal-service-name"></span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="booking-form" class="custom-form">
+                        <p class="mb-3">Price: <strong id="modal-service-price"></strong></p>
+                        <input type="hidden" id="booking-service" name="service_name">
+                        <input type="hidden" id="booking-price" name="service_price">
+
+                        <div class="mb-3">
+                            <input type="text" id="booking-customer-name" name="customer_name" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" id="booking-contact" name="contact_number" class="form-control" placeholder="Contact Number (e.g., 09xxxxxxxxx)" pattern="[0-9]{11,}" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" id="booking-email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+
+                        <button type="submit" id="booking-submit-btn" class="custom-btn btn w-100 mt-3">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+    
+    
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="row align-items-center">
+
         <div class="col-lg-12 col-12 border-bottom pb-5 mb-5">
           <div class="d-flex">
             <a href="index.html" class="navbar-brand d-flex align-items-center">
               <img src="images/Patnon.png" alt="Patnon Shoe Service Logo" style="height: 40px; width: auto;">
               <span style="margin-left:8px; font-size:1.25rem; font-weight:bold;">Patnon Shoe Care</span>
             </a>
-
             <ul class="social-icon ms-auto">
               <li><a href="#" class="social-icon-link bi-facebook"></a></li>
               <li><a href="#" class="social-icon-link bi-instagram"></a></li>
@@ -200,9 +560,9 @@
         <div class="col-lg-5 col-12 ms-lg-auto">
           <div class="copyright-text-wrap d-flex align-items-center">
             <p class="copyright-text ms-lg-auto me-4 mb-0">
-              Copyright © 2022 Patnon Shoe Care Co., Ltd.<br>
-              All Rights Reserved.<br><br>
-              Design: <a title="CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+              Copyright © 2022 Patnon Shoe Care Co., Ltd.
+              <br>All Rights Reserved.
+              <br><br>Design: <a title="CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo and Rhoy</a>
             </p>
             <a href="#section_1" class="bi-arrow-up arrow-icon custom-link"></a>
           </div>
@@ -212,12 +572,16 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FILES -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/click-scroll.js"></script>
-  <script src="js/custom.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.1"></script>
+
+<script src="js/custom.js"></script>
+
 
 </body>
 </html>

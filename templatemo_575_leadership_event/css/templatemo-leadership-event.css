@@ -435,6 +435,12 @@ b, strong {
 .highlight-icon:hover {
   color: var(--white-color);
 }
+.highlight-thumb .highlight-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;  /* Pwede ring 1 / 1 para maging square */
+    object-fit: cover;
+    border-radius: 8px;
+}
 
 /*---------------------------------------
   HERO (Consolidated)
@@ -530,7 +536,7 @@ b, strong {
   transform: scale(1.05);
 }
 .speakers-text-info {
-  padding: 100px;
+  padding:0.001%;
 }
 .speakers-title,
 .speakers-text {
