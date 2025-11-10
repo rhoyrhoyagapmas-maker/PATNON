@@ -18,6 +18,8 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      margin: 0;
+      overflow: hidden;
     }
 
     .login-card {
@@ -28,6 +30,8 @@
       max-width: 420px;
       overflow: hidden;
       transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
     }
 
     .login-card:hover {
@@ -84,6 +88,21 @@
       color: #777;
       font-size: 0.9rem;
     }
+
+    /* ✅ Fix for Mobile Keyboard Overlap */
+    @media (max-width: 768px) {
+      body {
+        height: auto;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding: 40px 20px;
+        overflow-y: auto;
+      }
+
+      .login-card {
+        margin-top: 10vh;
+      }
+    }
   </style>
 </head>
 
@@ -113,8 +132,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
-    // --- ADMIN LOGIN JAVASCRIPT ---
-
     const SUPABASE_URL = "https://ghvdkcakzoygktaiynae.supabase.co";
     const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdodmRrY2Frem95Z2t0YWl5bmFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MjE4MTEsImV4cCI6MjA3ODA5NzgxMX0.9q3ak7TDEGApTsmrG8KGrMFhceg0qKL-KJD3Hthp0Mg";
 
@@ -159,6 +176,14 @@
           window.location.href = "admin-dashboard.html";
         }, 1000);
       }
+    });
+
+    /* ✅ Mobile keyboard fix (scrolls login card into view) */
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        document.querySelector('.login-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
     });
   </script>
 </body>
